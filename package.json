@@ -1,0 +1,28 @@
+{
+  "name": "elements-js-design",
+  "version": "1.0.0",
+  "description": "Introduction to elements of JavaScript design for beginners & junior developers",
+  "main": "README.md",
+  "scripts": {
+    "s1": "jest ./stage-1/",
+    "s1.firstclass": "jest ./stage-1/first-class-functions/exercise.test.js",
+    "s1.closures": "jest ./stage-1/closures-and-scope/exercise.test.js",
+    "s1.functions": "jest ./stage-1/abstraction-with-functions/exercise.test.js",
+    "s2": "jest ./stage-2/",
+    "s2.modules": "jest ./stage-2/module-pattern/exercise.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foundersandcoders/workshop-client-side-design.git"
+  },
+  "author": "eliascodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foundersandcoders/workshop-client-side-design/issues"
+  },
+  "homepage": "https://github.com/foundersandcoders/workshop-client-side-design#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.5.0"
+  }
+}
