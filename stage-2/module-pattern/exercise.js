@@ -80,15 +80,33 @@ var createUrlBuilder = function (host) {
 
 //   return builder;
 // }
-var builder = function () {
-  const path ='hello'
-  const querystring ={foo:1 , bar:2}
+var builder = function (obj) {
+  let path = obj.path || "";
+  let query = obj.query || "";
 
-  return `${host}/${path}?foo=${querystring.foo}&bar=${querystring.bar}`
-}
+  const pathString = function (path) {
+    return `/${path}`;
+  };
+
+
+  const querystring = function (query) {
+    let str = "?";
+    for (let key in query) {
+      str += `${key}=${query[key]}&`;
+    }
+    return str.slice(0, -1);
+  };
+  builder.path = () => host + pathString(path);
+  builder.query = () => host + querystring(query);
+  
+  
+    return `${host}${path && pathString(path)}${query && querystring(query)}`
+    
+};
 
 return builder;
-}
+};
+
 
 module.exports = {
   UrlParser,
