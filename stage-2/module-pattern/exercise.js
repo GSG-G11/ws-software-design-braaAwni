@@ -66,21 +66,29 @@ var UrlParser = (function () {
  */
 var createUrlBuilder = function (host) {
   // fill in ...
-const url = host
-  var builder = function () {
-    const pathUrl = function (path) {
-      return `/${path}`;
-    };
-    const querystring ={foo:1 , bar:2}
+// const url = host
+//   var builder = function () {
+//     const pathUrl = function (path) {
+//       return `/${path}`;
+//     };
+//     const querystring ={foo:1 , bar:2}
 
-    builder.path = () => url + pathUrl(path);
+//     builder.path = () => url + pathUrl(path);
 
-    return `${url}${pathUrl}?foo=${querystring.foo}&bar=${querystring.bar}`
-  }
+//     return `${url}${pathUrl}?foo=${querystring.foo}&bar=${querystring.bar}`
+//   }
 
-  return builder;
+//   return builder;
+// }
+var builder = function () {
+  const path ='hello'
+  const querystring ={foo:1 , bar:2}
+
+  return `${host}/${path}?foo=${querystring.foo}&bar=${querystring.bar}`
 }
 
+return builder;
+}
 
 module.exports = {
   UrlParser,
