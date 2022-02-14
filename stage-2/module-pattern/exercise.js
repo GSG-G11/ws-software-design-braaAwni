@@ -66,11 +66,20 @@ var UrlParser = (function () {
  */
 var createUrlBuilder = function (host) {
   // fill in ...
+const url = host
+  var builder = function () {
+    const pathUrl = function (path) {
+      return `/${path}`;
+    };
+    const querystring ={foo:1 , bar:2}
 
-  var builder = function () {}
+    builder.path = () => url + pathUrl(path);
+
+    return `${url}${pathUrl}?foo=${querystring.foo}&bar=${querystring.bar}`
+  }
 
   return builder;
-};
+}
 
 
 module.exports = {
